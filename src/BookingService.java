@@ -24,7 +24,7 @@ public class BookingService {
         }
         return res;
     }
-    private Ticket bookTicket(User user,int trainId,int seatCount){
+    public Ticket bookTicket(User user,int trainId,int seatCount){
         for(Train train:trainList){
             if(train.getTrainId()==trainId){
                 if(train.bookSeats(seatCount)){

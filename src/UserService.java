@@ -4,7 +4,7 @@ import java.util.Map;
 public class UserService {
     private Map<String,User> userMap = new HashMap<>();
     private User currentUser = null;
-    public boolean registerUser(String username,String password,String fullName,int contact){
+    public boolean registerUser(String username,String password,String fullName,String contact){
         if(userMap.containsKey(username)){
             System.out.println("username already taken,Please choose another...");
             return false;
@@ -28,7 +28,7 @@ public class UserService {
         System.out.println("Welcome" + currentUser.getFullName() + "!");
         return true;
     }
-    private void logOutUser(){
+    public void logOutUser(){
         if(currentUser!=null){
             System.out.println("Logged Out " + currentUser.getFullName());
         }
